@@ -12,6 +12,7 @@
     "express": "~4.12.2",
     "jade": "~1.9.2",
     "morgan": "~1.5.1",
+    "nitrogen": "^0.2.24",
     "serve-favicon": "~2.2.0"
   },
   "description": "A RESTful api for the connected car project",

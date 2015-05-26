@@ -7,12 +7,15 @@
     "test": "grunt test"
   },
   "dependencies": {
+    "azure-storage": "^0.4.4",
     "body-parser": "~1.12.0",
     "cookie-parser": "~1.3.4",
     "debug": "~2.1.1",
     "express": "~4.12.2",
     "morgan": "~1.5.1",
+    "nconf": "^0.7.1",
     "nitrogen": "^0.2.24",
+    "rsvp": "^3.0.18",
     "serve-favicon": "~2.2.0"
   },
   "description": "A RESTful api for the connected car project",

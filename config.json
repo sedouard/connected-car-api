@@ -9,5 +9,7 @@
     "trip_summaries_table_name":"tripSummaries",
     "trip_locations_table_name":"tripLocations",
     "host_name": "localhost",
-    "host_port": "3000"
+    "host_port": "3000",
+    "host_protocol": "http",
+    "test_device_id": "553185d01cc25c0100e264c2"
 }

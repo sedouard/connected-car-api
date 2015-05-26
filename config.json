@@ -1,0 +1,13 @@
+{
+    "nitrogen_host": "api.nitrogen.io",
+    "nitrogen_protocol": "https",
+    "nitrogen_port": 443,
+    "nitrogen_email": "car@nitrogen.io",
+    "nitrogen_password": "test$account",
+    "storage_account_name": "nitrogenprod",
+    "storage_account_key": "79NBzKMzMCbL7FUD3z5seAH46dULNkaYJcoBZ1irrP+yIB6kSAGOGAq7Hecosk0CpJlTyYlqqQMSjLlqefMaBg==",
+    "trip_summaries_table_name":"tripSummaries",
+    "trip_locations_table_name":"tripLocations",
+    "host_name": "localhost",
+    "host_port": "3000"
+}

@@ -60,8 +60,7 @@ Note: as per [json api rc3](http://jsonapi.org) you may include a `related` url 
                         "id": "13412",
                         "latitude": 56.649237,
                         "longitude": 136.74491,
-                        "direction": 51,
-                        "altitude": 681
+                        "direction": 51
                     }
                 },
                 {
@@ -74,8 +73,7 @@ Note: as per [json api rc3](http://jsonapi.org) you may include a `related` url 
                         "id": "13413",
                         "latitude": -21.687184,
                         "longitude": -77.175881,
-                        "direction": 158,
-                        "altitude": 9
+                        "direction": 158
                     }
                 }
             ],
@@ -99,8 +97,7 @@ Note: as per [json api rc3](http://jsonapi.org) you may include a `related` url 
                         "id": "13414",
                         "latitude": 56.649237,
                         "longitude": 136.74491,
-                        "direction": 51,
-                        "altitude": 681
+                        "direction": 51
                     }
                 },
                 {
@@ -112,8 +109,7 @@ Note: as per [json api rc3](http://jsonapi.org) you may include a `related` url 
                         "id": "13415",
                         "latitude": -21.687184,
                         "longitude": -77.175881,
-                        "direction": 158,
-                        "altitude": 9
+                        "direction": 158
                     }
                 }
             ],
@@ -150,8 +146,7 @@ Note: as per [json api rc3](http://jsonapi.org) you may include a `related` url 
                         "id": "13412",
                         "latitude": 56.649237,
                         "longitude": 136.74491,
-                        "direction": 51,
-                        "altitude": 681
+                        "direction": 51
                     }
                 },
                 {
@@ -164,8 +159,7 @@ Note: as per [json api rc3](http://jsonapi.org) you may include a `related` url 
                         "id": "13413",
                         "latitude": -21.687184,
                         "longitude": -77.175881,
-                        "direction": 158,
-                        "altitude": 9
+                        "direction": 158
                     }
                 }
             ],
@@ -201,8 +195,7 @@ Note: as per [json api rc3](http://jsonapi.org) you may include a `related` url 
                         "id": "13412",
                         "latitude": 56.649237,
                         "longitude": 136.74491,
-                        "direction": 51,
-                        "altitude": 681
+                        "direction": 51
                     }
                 },
                 {
@@ -215,8 +208,7 @@ Note: as per [json api rc3](http://jsonapi.org) you may include a `related` url 
                         "id": "13413",
                         "latitude": -21.687184,
                         "longitude": -77.175881,
-                        "direction": 158,
-                        "altitude": 9
+                        "direction": 158
                     }
                 }
             ],
@@ -337,8 +329,7 @@ Note: as per [json api rc3](http://jsonapi.org) you may include a `related` url 
                         "id": "13412",
                         "latitude": 56.649237,
                         "longitude": 136.74491,
-                        "direction": 51,
-                        "altitude": 681
+                        "direction": 51
                     }
                 },
                 {
@@ -351,8 +342,7 @@ Note: as per [json api rc3](http://jsonapi.org) you may include a `related` url 
                         "id": "13413",
                         "latitude": -21.687184,
                         "longitude": -77.175881,
-                        "direction": 158,
-                        "altitude": 9
+                        "direction": 158
                     }
                 }
             ],

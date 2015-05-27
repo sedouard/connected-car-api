@@ -3,7 +3,7 @@ var router = express.Router();
 var nitrogenUtils = require('../lib/nitrogen-utils');
 var nconf = require('nconf');
 var tableUtils = require('../lib/table-utils');
-nconf.file({ file: './config.json' });
+nconf.env().file({ file: './config.json' });
 
 var sourceUrl = nconf.get('host_protocol') + '://' + nconf.get('host_name') + ':' + nconf.get('host_port');
 

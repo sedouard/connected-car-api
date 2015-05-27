@@ -31,6 +31,12 @@ npm test
 
 This is an express application that uses nitrogen and data from azure tables to implement the following API specification:
 
+# Server Host
+
+This server is hosted live at:
+
+**http://connected-car-api.azurewebsites.net**
+
 #VEHICLES
 --
 ## GET /vehicles/:id - Returns an array of size 1 with the vehicle which mataches :id

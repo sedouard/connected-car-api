@@ -31,6 +31,11 @@ router.get('/', function (req, res) {
         'type': 'driver',
         'name': 'Manning, Gilliam'
         
+    },
+    {
+        'id': '553ac59965094b476a817fa6',
+        'type': 'driver',
+        'name': 'Wilcox, Fitzgerald'
     }] });
 });
 

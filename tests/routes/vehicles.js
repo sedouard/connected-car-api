@@ -67,7 +67,7 @@ describe('Vehicles API', function(){
   });
 
   describe('GET - /vehicles/:id/trips', function(){
-    it('should return all vehicles in system', function(done){
+    it('should return trips for specified vehicle id', function(done){
       this.timeout(3000);
       request(app).get('/vehicles/' + nconf.get('test_device_id') + '/trips')
       .expect(200)

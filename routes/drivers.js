@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var nconf = require('nconf');
-nconf.file({ file: './config.json' });
+nconf.env().file({ file: './config.json' });
 
 /* GET home page. */
 router.get('/:id', function (req, res) {

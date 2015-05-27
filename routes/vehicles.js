@@ -61,7 +61,7 @@ router.get('/:id', function (req, res) {
             'links': {
               'self': sourceUrl + '/vehicles/' + req.params.id,
               'trips': {
-                'related': sourceUrl + '/trips/' + req.params.id,
+                'related': sourceUrl + '/vehicles/' + req.params.id + '/trips',
                 'linkage': linkage
               }
             }
@@ -97,7 +97,7 @@ router.get('/', function (req, res) {
             'links': {
               'self': sourceUrl + '/vehicles/' + vehicle.id,
               'trips': {
-                'related': sourceUrl + '/trips/' + vehicle.id,
+                'related': sourceUrl + '/vehicles/' + vehicle.id + '/trips',
               }
             }
         });
@@ -140,7 +140,7 @@ router.get('/:id/trips', function (req, res) {
       
       results.forEach(function(result){
         result.links = {
-          self: sourceUrl + '/vehicles/' + req.params.id + '/' + result.id,
+          self: sourceUrl + '/trips/' + result.id,
           driver: {
             related: sourceUrl + '/drivers/' + result.driver_id
           }

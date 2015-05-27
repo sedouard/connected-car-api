@@ -1,0 +1,13 @@
+{
+    "nitrogen_host": "",
+    "nitrogen_protocol": "https",
+    "nitrogen_port": 443,
+    "nitrogen_email": "",
+    "nitrogen_password": "",
+    "storage_account_name": "",
+    "storage_account_key": "",
+    "trip_summaries_table_name":"tripSummaries",
+    "trip_locations_table_name":"tripLocations",
+    "host_name": "localhost",
+    "host_port": "3000"
+}

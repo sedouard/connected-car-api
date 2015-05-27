@@ -6,9 +6,21 @@ var bodyParser = require('body-parser');
 var vehicles = require('./routes/vehicles');
 var app = express();
 
+// get configuration data
+var nconf = require('nconf');
+nconf.file({ file: './config.json' });
+
 var drivers = require('./routes/drivers');
 var trips = require('./routes/trips');
 var vehicles = require('./routes/vehicles');
+
+// nitrogen setup
+var nitrogenUtils = require('./lib/nitrogen-utils');
+
+nitrogenUtils.authenticate()
+.then(function(){
+  console.log('sucessfully authenticated to nitrogen');
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

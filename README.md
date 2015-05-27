@@ -29,7 +29,7 @@ npm install
 npm test
 ```
 
-An express application that uses nitrogen and data from azure table to implement the following API specification:
+This is an express application that uses nitrogen and data from azure tables to implement the following API specification:
 
 #VEHICLES
 --

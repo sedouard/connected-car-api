@@ -4,6 +4,31 @@ Front-end API for Oxide-fleet web client.
 
 [![Build Status](https://travis-ci.org/sedouard/connected-car-api.svg?branch=master)](https://travis-ci.org/sedouard/connected-car-api)
 
+# Running
+
+To run this server `cd` into the root of this repo:
+
+```
+npm install
+npm start
+```
+
+# Running Tests
+
+To run the conformance test suite
+
+Install grunt:
+
+```
+npm install grunt-cli -g
+```
+
+Now run the tests:
+```
+npm install
+npm test
+```
+
 An express application that uses nitrogen and data from azure table to implement the following API specification:
 
 #VEHICLES

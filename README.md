@@ -6,7 +6,9 @@ Front-end API for Oxide-fleet web client.
 
 # Running
 
-To run this server `cd` into the root of this repo:
+To run this server, either create a `config.json` based on [config-sample.json](./config-sample.json ) or set environment variables for each key specified in [config-sample.json(./config-sample.json). 
+
+`cd` into the root of the repo:
 
 ```
 npm install

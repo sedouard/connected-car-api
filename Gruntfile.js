@@ -2,7 +2,7 @@ module.exports = function (grunt) {
     // load all grunt tasks matching the `grunt-*` pattern
     require('load-grunt-tasks')(grunt);
 
-    var files = ['routes/**/*.js', '*js'];
+    var files = ['routes/**/*.js', 'lib/**/*.js', 'tests/**/*.js', '*js'];
 
     grunt.initConfig({
         jshint: {

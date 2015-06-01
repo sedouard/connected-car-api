@@ -72,6 +72,7 @@ router.get('/:id', function (req, res) {
     .catch(function(err) {
         console.error('ERROR:');
         console.dir(err);
+        console.error(err.stack);
         return res.send(500, err);
     });
 });
@@ -154,6 +155,7 @@ router.get('/:id/trips', function (req, res) {
     .catch(function(err) {
         console.error('ERROR:');
         console.dir(err);
+        console.error(err.stack);
         return res.send(500, err);
     });
 });

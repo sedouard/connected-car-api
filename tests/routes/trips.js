@@ -1,12 +1,37 @@
-/* global describe, it */
+/* global describe, it, beforeEach */
 var request = require('supertest');
 var assert = require('assert');
 var express = require('express');
-var trips = require('../../routes/trips');
+var nitrogenUtils = require('../../lib/nitrogen-utils.js');
 var nconf = require('nconf');
+var mockery = require('mockery');
 nconf.file({ file: './config.json' });
-var app = express();
-app.use('/trips', trips);
+
+var app;
+
+beforeEach(function (done) {
+  
+  // insert mocking api
+  mockery.enable({
+      warnOnReplace: false,
+      warnOnUnregistered: false
+  });
+
+  mockery.registerSubstitute('azure-storage', '../tests/mocks/azure-storage');
+  mockery.registerSubstitute('nitrogen', '../tests/mocks/nitrogen');
+  
+  mockery.enable();
+  app = express();
+  var trips = require('../../routes/trips');
+  app.use('/trips', trips);
+  
+  nitrogenUtils.authenticate()
+  .then(function(){
+    console.log('sucessfully authenticated to nitrogen');
+    done();
+  });
+});
+
 
 describe('Trips API', function(){
   describe('GET - /Trips/:id', function(){

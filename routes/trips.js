@@ -7,6 +7,38 @@ nconf.env().file({ file: './config.json' });
 var sourceUrl = nconf.get('host_protocol') + '://' + nconf.get('host_name') + ':' + nconf.get('host_port');
 
 /* GET home page. */
+router.get('/', function (req, res) {	// all trips, no filter
+ 
+  
+  return tableUtils.getAllTrips()
+  .then(function(results){
+  
+    if(!results) {
+      res.send(404, 'could not find any trips.');
+    }
+  
+    var trips = [];
+    
+    results.forEach(function(result){
+      result.links = {
+        self: sourceUrl + '/trips' + '/' + result.id,
+        driver: {
+          related: sourceUrl + '/drivers/' + result.driver_id
+        }
+      };
+      delete result.driver_id;
+      trips.push(result);
+    });
+      
+    res.send({ data: trips });
+  })
+  .catch(function(err) {
+      console.error('ERROR:');
+      console.dir(err);
+      return res.send(500, err);
+  });
+});
+
 router.get('/:id', function (req, res) {
   if(!req.params.id) {
       return res.send(400);

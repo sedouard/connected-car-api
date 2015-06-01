@@ -61,4 +61,30 @@ describe('Trips API', function(){
       });
     });
   });
+  
+  describe('GET - /Trips', function(){
+    it('should return all trips in system', function(done){
+      request(app).get('/trips')
+      .expect(200)
+      .end(function(err, res) {
+        
+        assert.equal(res.body.data.length > 1, true);
+        
+        for (var i in res.body.data) {
+          
+          if (res.body.data %1 === 0) {
+             var record = res.body.data[i];
+            assert.equal(typeof record.id, 'string');
+            assert.equal(record.type, 'trip');
+            assert.equal(typeof record.trip_events, 'array');
+            assert.equal(record.trip_events.length, 3);
+            assert.equal(typeof record.links.self, 'string');
+            assert.equal(typeof record.links.trips.related, 'string'); 			
+          }
+          
+        }
+        done();
+      });
+    });
+});
 });

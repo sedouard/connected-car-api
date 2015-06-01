@@ -3,7 +3,6 @@
 var request = require('supertest');
 var assert = require('assert');
 var express = require('express');
-var nitrogenUtils = require('../../lib/nitrogen-utils.js');
 var mockery = require('mockery');
 var nconf = require('nconf');
 nconf.env().file({ file: './config.json' });
@@ -11,16 +10,17 @@ var app;
 
 beforeEach(function (done) {
   
-  // insert mocking api
-  mockery.enable({
-      warnOnReplace: false,
-      warnOnUnregistered: false
-  });
-
   mockery.registerSubstitute('azure-storage', '../tests/mocks/azure-storage');
   mockery.registerSubstitute('nitrogen', '../tests/mocks/nitrogen');
   
-  mockery.enable();
+  // insert mocking api
+  mockery.enable({
+    warnOnReplace: false,
+    warnOnUnregistered: false
+  });
+  
+  var nitrogenUtils = require('../../lib/nitrogen-utils.js');
+
   app = express();
   var vehicles = require('../../routes/vehicles');
   app.use('/vehicles', vehicles);

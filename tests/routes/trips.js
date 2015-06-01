@@ -2,7 +2,7 @@
 var request = require('supertest');
 var assert = require('assert');
 var express = require('express');
-var nitrogenUtils = require('../../lib/nitrogen-utils.js');
+
 var nconf = require('nconf');
 var mockery = require('mockery');
 nconf.file({ file: './config.json' });
@@ -20,7 +20,7 @@ beforeEach(function (done) {
   mockery.registerSubstitute('azure-storage', '../tests/mocks/azure-storage');
   mockery.registerSubstitute('nitrogen', '../tests/mocks/nitrogen');
   
-  mockery.enable();
+  var nitrogenUtils = require('../../lib/nitrogen-utils.js');
   app = express();
   var trips = require('../../routes/trips');
   app.use('/trips', trips);

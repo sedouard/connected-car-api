@@ -709,7 +709,7 @@ nitrogen.Service.prototype.resume = function () {
 };
 
 nitrogen.Service.prototype.authenticate = function (user, callback) {
-  console.log('CALLING AUTH');
+
     return callback(null, { 
         principal: new nitrogen.Principal()
     }, new nitrogen.Principal() );

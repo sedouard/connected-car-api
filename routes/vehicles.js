@@ -13,7 +13,7 @@ router.get('/:id', function (req, res) {
     if(!req.params.id) {
         return res.send(400);
     }
-    
+    var targetVehicle;
     nitrogenUtils.getAllDevices()
     .then(function(vehicles) {
       
@@ -21,6 +21,7 @@ router.get('/:id', function (req, res) {
       vehicles.forEach(function(vehicle) {
         if (vehicle.id === req.params.id) {
            found = true;
+           targetVehicle = vehicle;
         }
       });
       
@@ -51,7 +52,7 @@ router.get('/:id', function (req, res) {
         {
           data: [{
             'type': 'vehicle',
-            'name': req.params.id,
+            'name': targetVehicle.name,
             'id': req.params.id,
             // we dont have any actual data for make/model/year/mileage
             'make': 'Toyota',
@@ -88,7 +89,7 @@ router.get('/', function (req, res) {
       vehicles.forEach(function(vehicle) {
         response.push({
             'type': 'vehicle',
-            'name': vehicle.id,
+            'name': vehicle.name,
             'id': vehicle.id,
             // we dont have any actual data for make/model/year/mileage
             'make': 'Toyota',

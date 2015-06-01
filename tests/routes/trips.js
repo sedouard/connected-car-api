@@ -62,3 +62,4 @@ describe('Trips API', function(){
       });
     });
 });
+});

@@ -39,17 +39,38 @@ router.get('/:id', function (req, res) {
       var included = [];
       
       results.forEach(function(result){
-
+  	     
+        if (result.id && result.type) {
           linkage.push({
               'type': result.type,
               'id': result.id
-          });
-          
+          }); 
           included.push(result);
+        }
       });
       
       res.send( 
         {
+          data: [{
+            'type': 'vehicle',
+            'name': targetVehicle.name,
+            'id': req.params.id,
+            // we dont have any actual data for make/model/year/mileage
+            'make': 'Toyota',
+            'model': 'Prius',
+            'production_year': '2013',
+            'is_active': 'true',
+            'links': {
+              'self': sourceUrl + '/vehicles/' + req.params.id,
+              'trips': {
+                'related': sourceUrl + '/vehicles/' + req.params.id + '/trips',
+                'linkage': linkage
+              }
+            }
+          }],
+          'included': included
+        });
+        console.log('%j',{
           data: [{
             'type': 'vehicle',
             'name': targetVehicle.name,

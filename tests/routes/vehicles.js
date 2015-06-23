@@ -55,7 +55,8 @@ describe('Vehicles API', function(){
     var actualInterval = nconf.get('skip_location_event_interval');
 
     before(function() {
-      nconf.set('skip_location_event_interval', 2);
+      process.env.skip_location_event_interval = 2;
+      nconf.env().file({ file: './config.json' });
     });
 
     it('should return 1/2 as many trips for id', function(done){
@@ -74,7 +75,8 @@ describe('Vehicles API', function(){
     });
 
     after(function() {
-      nconf.set('skip_location_event_interval', actualInterval);
+      process.env.skip_location_event_interval = actualInterval;
+      nconf.env().file({ file: './config.json' });
     });
 
   });

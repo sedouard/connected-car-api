@@ -1,5 +1,5 @@
 /// <reference path="../../typings/mocha/mocha.d.ts"/>
-/* global describe, beforeEach, it */
+/* global describe, beforeEach, it, before, after */
 var request = require('supertest');
 var assert = require('assert');
 var express = require('express');
@@ -49,6 +49,36 @@ describe('Vehicles API', function(){
         done();
       });
     });
+  });
+
+  describe('GET - /vehicles/:id', function(){
+    var actualInterval = nconf.get('skip_location_event_interval');
+
+    before(function() {
+      process.env.skip_location_event_interval = 2;
+      nconf.env().file({ file: './config.json' });
+    });
+
+    it('should return 1/2 as many trips for id', function(done){
+      request(app).get('/vehicles/' + nconf.get('test_device_id'))
+      .expect(200)
+      .end(function(err, res) {        
+        assert.equal(err, null);
+        assert.equal(res.body.data[0].type, 'vehicle');
+        assert.equal(res.body.data[0].id, nconf.get('test_device_id'));
+        assert.equal(res.body.included[0].type, 'trip');
+        assert.equal(res.body.included[0].trip_events.length, 2);
+        assert.equal(res.body.data[0].links.self !== null, true);
+        assert.equal(res.body.data[0].links.trips.linkage !== null, true);
+        done();
+      });
+    });
+
+    after(function() {
+      process.env.skip_location_event_interval = actualInterval;
+      nconf.env().file({ file: './config.json' });
+    });
+
   });
 
   describe('GET - /vehicles', function(){

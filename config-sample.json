@@ -10,6 +10,7 @@
     "trip_locations_table_name":"tripLocations",
     "host_name": "localhost",
     "host_port": 3000,
+    "skip_location_event_interval": 20,
     "host_protocol": "http",
     "test_device_id": "",
     "test_trip_id": ""

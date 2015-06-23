@@ -38,6 +38,7 @@ This is an express application that uses nitrogen and data from azure tables to 
 This server is hosted live at:
 
 **http://connected-car-api.azurewebsites.net**
+**http://connected-car-api-dev.azurewebsites.net**
 
 #VEHICLES
 --
